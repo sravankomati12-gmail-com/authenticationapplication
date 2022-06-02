@@ -24,7 +24,7 @@ module.exports = {
           { useremail: result.email, userid: result._id },
           process.env.secratekey,
           {
-            expiresIn: "2h",
+            expiresIn: "1h",
           }
         );
 
