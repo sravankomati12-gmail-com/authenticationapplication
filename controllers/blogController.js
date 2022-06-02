@@ -7,7 +7,7 @@ module.exports = {
       const { image } = req.files;
       if (title != "" && description != "" && image != undefined) {
         const imagepath = Date.now() + "_" + image.name;
-        // console.log("image :>> ", image);
+
         const path = "./public/images/" + imagepath;
 
         image.mv(path, async (err) => {
