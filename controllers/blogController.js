@@ -10,6 +10,8 @@ module.exports = {
 
         const path = "./public/images/" + imagepath;
 
+        // kl;;
+        // sdcd
         image.mv(path, async (err) => {
           if (err) {
             console.log(err);
