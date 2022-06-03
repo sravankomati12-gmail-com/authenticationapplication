@@ -10,7 +10,7 @@ module.exports = {
   adduser: async (req, res) => {
     try {
       const { name, password, email } = req.body;
-      const count = 0;
+
       if (name != "" && email != "" && password != "") {
         const tempsecret = speakeasy.generateSecret();
         const passwordhash = await bcrypt.hash(password, 10);
@@ -215,9 +215,9 @@ module.exports = {
             { _id: result.userid },
             { isstatus: true }
           );
-          res.json({ message: "now your active" });
+          res.json({ message: "now your active " });
         } else {
-          res.json({ message: "code is not verify" });
+          res.json({ message: "code is not verify or code is expire" });
         }
       } else {
         res.json({ message: "This id and code not be empty" });
