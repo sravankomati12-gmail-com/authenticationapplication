@@ -36,9 +36,23 @@ module.exports = {
   },
   getAllBlog: async (req, res) => {
     try {
+      //   const getAllBlogs = await blogModel.aggregate([
+      //     {
+      //       // $lookup: {
+      //       //   from: "users",
+      //       //   localField: "createdby",
+      //       //   foreignField: "_id",
+      //       //   as: "Createdby",
+      //       // },
+
+      //     },
+      //   ]);
+
       const getAllBlogs = await blogModel
         .find()
-        .populate({ path: "createdby", select: ["name"] });
+
+        .populate({ path: "createdby", select: ["name", "asRole", "email"] });
+
       res.json({ message: "List of blogs", getAllBlogs });
     } catch (error) {
       // console.log(error.message);

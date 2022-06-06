@@ -9,4 +9,12 @@ userRouter.post("/update", userController.updateUserById);
 userRouter.post("/forgot", userController.forgotPassword);
 userRouter.get("/verify", userController.otpVerification);
 
+// userRouter.get("/hello", async (req, res) => {
+//   try {
+//     res.send("Hello Admin");
+//   } catch (error) {
+//     res.send(error);
+//   }
+// });
+
 module.exports = userRouter;
