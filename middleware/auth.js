@@ -14,7 +14,7 @@ async function checkUserOrAdmin(req, res, next) {
     if (result != undefined) {
       req.id = data.id;
       if (result.isstatus == true) {
-        if (data.role === "admin") {
+        if (data.role === "admin" || result.isstatus === "admin") {
           next();
         } else {
           if (req.url == "/new" || req.url == "/bloglist") {
